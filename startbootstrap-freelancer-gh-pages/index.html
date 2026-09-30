@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Portafolio y CV personal" />
+        <meta name="author" content="Zefe" />
+        <title>Zefe - Portafolio / CV</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/portafolio.css" rel="stylesheet" />
+        <style>
+            /* ============================================================
+               Paleta personalizada: navy profundo + dorado
+               (reemplaza el turquesa por defecto de la plantilla)
+               ============================================================ */
+            :root {
+                --navy: #0f172a;
+                --navy-light: #1e293b;
+                --accent: #f5b301;
+                --accent-dark: #c98d00;
+                --ink: #0f172a;
+                --muted: #64748b;
+            }
+
+            /* Nav y footer: navy sólido en vez de gris/negro por defecto */
+            .navbar.bg-secondary,
+            footer.footer,
+            .copyright {
+                background-color: var(--navy) !important;
+            }
+
+            /* Header y sección de habilidades: degradado navy en vez de turquesa plano */
+            .masthead.bg-primary,
+            section.bg-primary {
+                background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 100%) !important;
+            }
+
+            /* Encabezados de sección sobre fondo claro */
+            .page-section-heading.text-secondary,
+            .portfolio-modal-title.text-secondary {
+                color: var(--ink) !important;
+            }
+
+            /* Estrellas de los divisores: dorado en vez de blanco/gris plano */
+            .divider-custom-icon i {
+                color: var(--accent-dark);
+            }
+            .divider-light .divider-custom-icon i {
+                color: var(--accent);
+            }
+
+            /* Botones primarios: dorado con texto oscuro, más cálido que el azul por defecto */
+            .btn-primary {
+                background-color: var(--accent) !important;
+                border-color: var(--accent) !important;
+                color: var(--navy) !important;
+                font-weight: 700;
+            }
+            .btn-primary:hover {
+                background-color: var(--accent-dark) !important;
+                border-color: var(--accent-dark) !important;
+            }
+
+            /* Iconos sociales: relleno dorado al pasar el mouse */
+            .btn-outline-light:hover {
+                background-color: var(--accent) !important;
+                border-color: var(--accent) !important;
+                color: var(--navy) !important;
+            }
+
+            /* Overlay de "+" al pasar el mouse sobre un proyecto: navy translúcido en vez de turquesa */
+            .portfolio-item-caption {
+                background: linear-gradient(160deg, rgba(15,23,42,0.88), rgba(30,41,59,0.88)) !important;
+            }
+
+            /* ---------- Barras de habilidades ---------- */
+            .skill-bar {
+                height: 10px;
+                border-radius: 6px;
+                background-color: rgba(255,255,255,0.15);
+            }
+            .skill-fill {
+                background-color: var(--accent) !important;
+            }
+
+            /* ---------- Tarjetas de experiencia / educación ---------- */
+            .cv-card {
+                background: #fff;
+                border-radius: 8px;
+                border-left: 4px solid var(--accent);
+                padding: 1.5rem;
+                box-shadow: 0 4px 16px rgba(15,23,42,0.08);
+                margin-bottom: 1.5rem;
+            }
+            .cv-card h5 { margin-bottom: 0.2rem; color: var(--ink); }
+            .cv-card .cv-date { color: var(--muted); font-size: 0.9rem; }
+
+            /* ---------- Proyectos: mismo tamaño para las 3 imágenes ---------- */
+            .portfolio-item {
+                position: relative;
+                overflow: hidden;
+                aspect-ratio: 4 / 3;
+                border-radius: 6px;
+            }
+            .portfolio-item img.img-fluid {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand" href="#page-top">Zeferino Velasco</a>
+                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Sobre mí</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">Habilidades</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#experience">Experiencia / Educación</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Proyectos</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead / Encabezado tipo CV-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <img class="masthead-avatar mb-4" src="assets/img/MiFoto.jpeg" alt="Foto de perfil" />
+                <h1 class="masthead-heading text-uppercase mb-0">ZEFERINO VELASCO MARTINEZ</h1>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <p class="masthead-subheading font-weight-light mb-3">Estudiante de Ingeniería en Sistemas Computacionales</p>
+
+                <div class="mb-2">
+                    <span class="mx-2"><i class="fas fa-envelope me-1"></i>zvelasco799@gmail.com</span>
+                    <span class="mx-2"><i class="fas fa-phone me-1"></i>+52 951 5301149</span>
+                    <span class="mx-2"><i class="fas fa-location-dot me-1"></i>Oaxaca, México</span>
+                </div>
+                <div>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section / Sobre mí -->
+        <section class="page-section" id="about">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Sobre mí</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <p class="lead text-center">
+                            Hola, mi nombre es Zeferino Velasco Martínez, estudiante del Tecnológico de Oaxaca de la carrera de Ingeniería en
+                            Sistemas Computacionales. Tengo experiencia en desarrollo de aplicaciones móviles, páginas web y bases de datos con
+                            Oracle y PostgreSQL, además de experiencia trabajando en equipo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section / Habilidades -->
+        <section class="page-section bg-primary text-white mb-0" id="skills">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-white">Habilidades</h2>
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Java</span><span>80%</span>
+                            </div>
+                            <div class="progress skill-bar">
+                                <div class="progress-bar skill-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Android Studio</span><span>70%</span>
+                            </div>
+                            <div class="progress skill-bar">
+                                <div class="progress-bar skill-fill" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>HTML / CSS / JavaScript</span><span>65%</span>
+                            </div>
+                            <div class="progress skill-bar">
+                                <div class="progress-bar skill-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Bases de datos (PostgreSQL / SQLite)</span><span>60%</span>
+                            </div>
+                            <div class="progress skill-bar">
+                                <div class="progress-bar skill-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between">
+                                <span>Skill que quiero aprender (React)</span><span>30%</span>
+                            </div>
+                            <div class="progress skill-bar">
+                                <div class="progress-bar skill-fill" style="width: 30%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Education Section -->
+        <section class="page-section" id="experience">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Experiencia / Educación</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="cv-card">
+                            <h5>Instituto Tecnológico de Oaxaca</h5>
+                            <div class="cv-date">2023 - Presente</div>
+                            <p class="mb-0">Ingeniería en Sistemas Computacionales. Cursando materias de desarrollo de software, bases de datos y simulación.</p>
+                        </div>
+                        <div class="cv-card">
+                            <h5>portafolio web / actividad 4 / 7 semestre </h5>
+                            <div class="cv-date">JUN-DIC 2026</div>
+                            <p class="mb-0">creacion de paginas web.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section / Proyectos -->
+        <section class="page-section portfolio" id="portfolio">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Proyectos</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/proyecto1.png" alt="Proyecto 1" />
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/proyecto2.png" alt="Proyecto 2" />
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/proyecto3.png" alt="Proyecto 3" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contacto</h2>
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-xl-7">
+                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="name" type="text" placeholder="Escribe tu nombre..." data-sb-validations="required" />
+                                <label for="name">Nombre completo</label>
+                                <div class="invalid-feedback" data-sb-feedback="name:required">El nombre es obligatorio.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="email" type="email" placeholder="nombre@ejemplo.com" data-sb-validations="required,email" />
+                                <label for="email">Correo electrónico</label>
+                                <div class="invalid-feedback" data-sb-feedback="email:required">El correo es obligatorio.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">El correo no es válido.</div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control" id="message" type="text" placeholder="Escribe tu mensaje..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <label for="message">Mensaje</label>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">El mensaje es obligatorio.</div>
+                            </div>
+                            <div class="d-none" id="submitSuccessMessage">
+                                <div class="text-center mb-3">
+                                    <div class="fw-bolder">¡Mensaje enviado correctamente!</div>
+                                </div>
+                            </div>
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error al enviar el mensaje.</div></div>
+                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer text-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Ubicación</h4>
+                        <p class="lead mb-0">Oaxaca de Juárez, Oaxaca, México</p>
+                    </div>
+                    <div class="col-lg-4 mb-5 mb-lg-0">
+                        <h4 class="text-uppercase mb-4">Redes</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-github"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">Sobre este sitio</h4>
+                        <p class="lead mb-0">Portafolio personal construido con Bootstrap, basado en la plantilla Freelancer de Start Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <div class="copyright py-4 text-center text-white">
+            <div class="container"><small>Copyright &copy; Zeferino Velasco 2026</small></div>
+        </div>
+
+        <!-- Portfolio Modals -->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Detección de lenguas de señas</h2>
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/proyecto1.png" alt="Proyecto 1" />
+                                    <p class="mb-4">Este proyecto es la creación de un sistema para detectar los signos de lenguaje de señas.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">RutaGo</h2>
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/proyecto2.png" alt="Proyecto 2" />
+                                    <p class="mb-4">Este proyecto se trata de una aplicación móvil que marca rutas de autobuses en Oaxaca, usando MapLibre.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Hospital El Niño Doctor</h2>
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/proyecto3.png" alt="Proyecto 3" />
+                                    <p class="mb-4">Esta es una aplicación móvil para un hospital, con varios menús: muestra el estado de la red a la
+                                        que está conectado, tiene integración con Google Maps para ver la ubicación en tiempo real, y permite
+                                        registrar pacientes, doctores, etc.</p>
+                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                        <i class="fas fa-xmark fa-fw"></i>
+                                        Cerrar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/portafolio.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>
